@@ -36,19 +36,23 @@ int main()
 
     vector<string> ar_temp = split(rtrim(ar_temp_temp));
 
-    vector<int> ar(ar_count);
+    if (ar_count > 0 ) {
+        vector<int> ar(ar_count);
 
-    for (int i = 0; i < ar_count; i++) {
-        int ar_item = stoi(ar_temp[i]);
+        for (int i = 0; i < ar_count; i++) {
+            int ar_item = stoi(ar_temp[i]);
+            if (ar_item <= 1000) {
+                ar[i] = ar_item;
+            }
 
-        ar[i] = ar_item;
+        }
+        
+        int result = simpleArraySum(ar);
+
+        fout << result << "\n";
+
+        fout.close();
     }
-
-    int result = simpleArraySum(ar);
-
-    fout << result << "\n";
-
-    fout.close();
 
     return 0;
 }
