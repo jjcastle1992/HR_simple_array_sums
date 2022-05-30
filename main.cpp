@@ -14,7 +14,12 @@ vector<string> split(const string &);
  */
 
 int simpleArraySum(vector<int> ar) {
+    int arraySum = 0;
+    for (int i = 0; i < ar.size(); i++) {
+        arraySum += ar[i];
+    }
 
+    return arraySum;
 }
 
 int main()
